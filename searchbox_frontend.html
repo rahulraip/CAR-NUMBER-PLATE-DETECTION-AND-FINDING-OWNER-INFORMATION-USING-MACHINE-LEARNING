@@ -1,0 +1,93 @@
+<html>
+
+    <head>
+
+        <title>WEBAPP</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+
+
+<script>
+
+function lw()
+
+{
+
+var i = document.getElementById("in1").value
+
+
+
+var xhr = new XMLHttpRequest();
+
+
+
+xhr.open("GET", "http://192.168.43.210/cgi-bin/car.py?x=" + i, true);
+
+
+
+xhr.send();
+
+
+
+xhr.onload = function() {
+
+      var output = xhr.responseText;
+
+      document.getElementById("d1").innerHTML = output;
+
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+    <body>
+
+        <div class="box">
+
+            <form>    
+
+                <h1 class="h1" >RTO WEB-APP</h1>
+
+                <input type="text" placeholder="Type the vehicle number.."/ >
+
+                <input type="submit" onclick="lw()" value="Search" />
+
+                
+
+            </form>
+
+        
+
+        </div>
+
+        
+
+        <h3 class="para">RTO Web-App allows you to fetch the info of owner's vehicle!!<br> Type the vehicle number or upload the image of car containing its number plate..</h3>
+
+        
+
+        <img class="carimg" src="car-driving-61.gif">
+
+        
+
+                <div class="upload">
+
+                <input type="file" />
+
+                </div>
+
+        
+
+    </body>
+
+</html> 
